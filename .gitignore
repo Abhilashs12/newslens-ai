@@ -1,0 +1,20 @@
+>> git commit -m "initialize project structure"       
+>> git push -u origin main
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../PROJECT_GUIDE.md
+        ../README.md
+        ../docs/
+
+nothing added to commit but untracked files present (use "git add" to track)
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (20/20), 27.95 KiB | 440.00 KiB/s, done.
+Total 20 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:Abhilashs12/newslens-ai.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
