@@ -1,9 +1,8 @@
-function App() {
-  return (
-    <div>
-      <h1>NewsLens AI</h1>
-    </div>
-  );
-}
+import { RouterProvider } from "react-router-dom";
+import router from "./routes";
+
+const App = () => {
+  return <RouterProvider router={router} />;
+};
 
 export default App;
