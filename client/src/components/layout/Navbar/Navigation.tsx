@@ -1,28 +1,48 @@
-import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
-const Logo = () => {
+const links = [
+  { name: "Home", path: "/" },
+  { name: "Technology", path: "/technology" },
+  { name: "AI", path: "/ai" },
+  { name: "Business", path: "/business" },
+  { name: "World", path: "/world" },
+  { name: "Sports", path: "/sports" },
+];
+
+const Navigation = () => {
   return (
-    <Link
-      to="/"
-      className="flex items-center gap-4 transition-opacity duration-300 hover:opacity-90"
-    >
-      {/* Brand Mark */}
-      <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#0F766E]">
-        <div className="h-3 w-3 rounded-full bg-[#0F766E]" />
-      </div>
+    <nav className="hidden xl:flex items-center gap-9">
+      {links.map((item) => (
+        <NavLink
+          key={item.name}
+          to={item.path}
+          className={({ isActive }) =>
+            `relative py-6 text-[16px] font-medium transition-colors duration-200 ${
+              isActive
+                ? "text-[#0F766E]"
+                : "text-slate-700 hover:text-[#0F766E]"
+            }`
+          }
+        >
+          {({ isActive }) => (
+            <>
+              {item.name}
 
-      {/* Brand Name */}
-      <div className="leading-none">
-        <h1 className="text-[40px] font-black tracking-[-2px] text-[#111827]">
-          NewsLens
-        </h1>
+              {isActive && (
+                <span className="absolute bottom-2 left-0 h-[2px] w-full rounded-full bg-[#0F766E]" />
+              )}
+            </>
+          )}
+        </NavLink>
+      ))}
 
-        <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.45em] text-slate-500">
-          AI POWERED NEWS
-        </p>
-      </div>
-    </Link>
+      <button className="flex items-center gap-1 py-6 text-[16px] text-slate-700 hover:text-[#0F766E]">
+        More
+        <ChevronDown size={16} />
+      </button>
+    </nav>
   );
 };
 
-export default Logo;
+export default Navigation;
